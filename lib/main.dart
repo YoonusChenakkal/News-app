@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_news/home.dart';
+import 'package:online_news/Home.dart';
 
 void main() {
   runApp(MainApp());
@@ -11,7 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: home(),
+      home: Home(),
     );
   }
 }
