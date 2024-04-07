@@ -7,7 +7,7 @@ class newsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(4),
-      color: Colors.grey[100],
+      color: Color.fromARGB(95, 245, 245, 245),
       height: MediaQuery.of(context).size.height / 8,
       width: MediaQuery.of(context).size.width,
       child: Row(

@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
           title: Text(
             'Online News ',
             style: TextStyle(
-                fontSize: 25, fontWeight: FontWeight.w600, color: Colors.blue),
+                fontSize: 25, fontWeight: FontWeight.w600, color: Color.fromARGB(255, 79, 117, 184)),
           ),
           toolbarHeight: 60),
       body: _news != null
