@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:online_news/model.dart';
+import 'package:online_news/widgets/newsDetails.dart';
 import 'package:online_news/widgets/newsList.dart';
 
 class Home extends StatefulWidget {
@@ -41,13 +42,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          leading: Icon(
+            Icons.newspaper,
+            size: 30,
+            color: Color.fromARGB(255, 68, 105, 123),
+          ),
+          title: Text(
+            'Online News ',
+            style: TextStyle(
+                fontSize: 25, fontWeight: FontWeight.w600, color: Colors.blue),
+          ),
+          toolbarHeight: 60),
       body: _news != null
           ? ListView.builder(
               itemCount: _news!.articles.length,
               itemBuilder: (context, index) {
                 var article = _news!.articles[index];
-                return newsList(article: article,);
+                return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => newsDetails(article: article),
+                          ));
+                    },
+                    child: newsList(
+                      article: article,
+                    ));
               },
             )
           : Center(child: CircularProgressIndicator()),
